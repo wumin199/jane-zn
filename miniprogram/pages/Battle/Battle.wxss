@@ -30,8 +30,8 @@
 }
 /* 滚轮外层容器 */
 .roller-container {
-  width: 600rpx;
-  height: 500rpx;
+  width: 540rpx;
+  height: 350rpx; /*三个地方的高度要保持一致：container-mask-habit roller*/
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -44,7 +44,7 @@
 /* 渐变遮罩：让滚轮边缘产生消失感 */
 .roller-mask {
   width: 100%;
-  height: 500rpx;
+  height: 350rpx;
   position: relative;
   /* 左右弧形边框，像括号 */
   border-radius: 100rpx / 90%;
@@ -80,7 +80,7 @@
 /* 滚轮的大小 */
 .habit-roller {
   width: 100%;
-  height: 500rpx;
+  height: 350rpx;
 }
 /* 滚轮单项样式 */
 .roller-item {
