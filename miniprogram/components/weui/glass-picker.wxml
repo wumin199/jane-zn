@@ -5,7 +5,7 @@
     value="{{value}}" 
     bindchange="bindChange">
     <picker-view-column>
-      <block wx:for="{{items}}" wx:key="*this">
+      <block wx:for="{{items}}" wx:key="index">
         <view class="weui-picker-item {{index === value[0] ? 'weui-picker-item-selected' : ''}}">
           {{item}}
         </view>

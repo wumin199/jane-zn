@@ -1,8 +1,5 @@
 {
   "navigationBarTitleText": "审判",
   "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#ffffff",
-  "usingComponents": {
-    "glass-picker": "/components/weui/glass-picker"
-  }
+  "navigationBarBackgroundColor": "#ffffff"
 }

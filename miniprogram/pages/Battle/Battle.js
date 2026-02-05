@@ -27,7 +27,7 @@ Page({
   },
 
   onHabitChange(e) {
-    const index = e.detail.value[0];
+    const index = e.detail.value;
     const habits = this.data.habitList.length > 0 ? this.data.habitList : this.data.defaultHabits;
     this.setData({
       selectedHabitIndex: index,
@@ -51,13 +51,14 @@ Page({
         title: true
       }).get();
       
-      const habits = res.data.map(item => item.title);
+      // 去重：使用Set过滤重复的习惯
+      const uniqueHabits = [...new Set(res.data.map(item => item.title))];
       
-      if (habits.length > 0) {
+      if (uniqueHabits.length > 0) {
         // 有习惯，使用真实数据
         this.setData({
-          habitList: habits,
-          habitTitle: habits[0]
+          habitList: uniqueHabits,
+          habitTitle: uniqueHabits[0]
         });
       } else {
         // 没有习惯，使用范例数据

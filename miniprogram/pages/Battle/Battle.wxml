@@ -2,13 +2,16 @@
   <!--半透明黑色遮罩层，避免画面太亮-->
   <view class="overlay"></view>
 
-  <!-- 习惯滚轮 - 上半部分 -->
+  <!-- 习惯选择器 -->
   <view class="roller-wrapper">
-    <glass-picker 
-      items="{{habitList.length > 0 ? habitList : defaultHabits}}" 
-      value="{{[selectedHabitIndex]}}" 
-      bind:change="onHabitChange">
-    </glass-picker>
+    <view class="habit-selector">
+      <picker
+        range="{{habitList.length > 0 ? habitList : defaultHabits}}"
+        value="{{selectedHabitIndex}}"
+        bindchange="onHabitChange">
+        <view class="picker-input">{{habitList.length > 0 ? habitList[selectedHabitIndex] : defaultHabits[selectedHabitIndex]}}</view>
+      </picker>
+    </view>
   </view>
 
   <!-- 挑战卡片 - 下半部分 -->
