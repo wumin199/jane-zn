@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/wumin199/jane-zn/issues"
   },
-  "homepage": "https://github.com/wumin199/jane-zn#readme"
+  "homepage": "https://github.com/wumin199/jane-zn#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.5.6"
+  }
 }

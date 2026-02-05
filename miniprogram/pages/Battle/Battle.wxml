@@ -4,33 +4,11 @@
 
   <!-- 习惯滚轮 - 上半部分 -->
   <view class="roller-wrapper">
-    <view class="roller-container">
-    <!-- 滚轮的渐变遮罩层-->
-      <view class="roller-mask">
-      <!--滚轮组件-->
-        <picker-view 
-          indicator-style="height: 50rpx;" 
-          class="habit-roller" 
-          value="{{[selectedHabitIndex]}}" 
-          bindchange="onHabitChange">
-          
-          <picker-view-column>
-            <block wx:if="{{habitList.length > 0}}">
-              <view wx:for="{{habitList}}" wx:key="index" 
-                    class="roller-item {{index === selectedHabitIndex ? 'selected' : ''}}">
-                {{item}}
-              </view>
-            </block>
-            <block wx:else>
-              <view wx:for="{{defaultHabits}}" wx:key="index" 
-                    class="roller-item example {{index === selectedHabitIndex ? 'selected' : ''}}">
-                {{item}} (范例)
-              </view>
-            </block>
-          </picker-view-column>
-        </picker-view>
-      </view>
-    </view>
+    <glass-picker 
+      items="{{habitList.length > 0 ? habitList : defaultHabits}}" 
+      value="{{[selectedHabitIndex]}}" 
+      bind:change="onHabitChange">
+    </glass-picker>
   </view>
 
   <!-- 挑战卡片 - 下半部分 -->

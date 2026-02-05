@@ -1,0 +1,15 @@
+<view class="weui-glass-picker">
+  <picker-view 
+    indicator-style="height: 50rpx;" 
+    class="weui-picker-view" 
+    value="{{value}}" 
+    bindchange="bindChange">
+    <picker-view-column>
+      <block wx:for="{{items}}" wx:key="*this">
+        <view class="weui-picker-item {{index === value[0] ? 'weui-picker-item-selected' : ''}}">
+          {{item}}
+        </view>
+      </block>
+    </picker-view-column>
+  </picker-view>
+</view>

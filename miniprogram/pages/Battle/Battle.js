@@ -74,15 +74,6 @@ Page({
     }
   },
   
-  onHabitChange(e) {
-    const index = e.detail.value[0];
-    const habits = this.data.habitList.length > 0 ? this.data.habitList : this.data.defaultHabits;
-    this.setData({
-      selectedHabitIndex: index,
-      habitTitle: habits[index]
-    });
-  },
-
   onInput(e) {
     this.setData({ habitTitle: e.detail.value });
   },
