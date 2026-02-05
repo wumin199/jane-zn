@@ -1,0 +1,64 @@
+<view class="container" style="background-image: url('{{customBg ? customBg : '../../images/bg.png'}}');">
+  <!--半透明黑色遮罩层，避免画面太亮-->
+  <view class="overlay"></view>
+
+  <!-- 习惯滚轮 - 上半部分 -->
+  <view class="roller-wrapper">
+    <view class="roller-container">
+    <!-- 滚轮的渐变遮罩层-->
+      <view class="roller-mask">
+      <!--滚轮组件-->
+        <picker-view 
+          indicator-style="height: 50rpx;" 
+          class="habit-roller" 
+          value="{{[selectedHabitIndex]}}" 
+          bindchange="onHabitChange">
+          
+          <picker-view-column>
+            <block wx:if="{{habitList.length > 0}}">
+              <view wx:for="{{habitList}}" wx:key="index" 
+                    class="roller-item {{index === selectedHabitIndex ? 'selected' : ''}}">
+                {{item}}
+              </view>
+            </block>
+            <block wx:else>
+              <view wx:for="{{defaultHabits}}" wx:key="index" 
+                    class="roller-item example {{index === selectedHabitIndex ? 'selected' : ''}}">
+                {{item}} (范例)
+              </view>
+            </block>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 挑战卡片 - 下半部分 -->
+  <view class="card-wrapper">
+    <view class="card">
+      <block wx:if="{{!isBattling}}">
+        <text class="title">当前挑战</text>
+        
+        <input class="input-box" 
+               placeholder="请选择或输入你想抵制的行为" 
+               placeholder-class="ph-color"
+               value="{{habitTitle}}"
+               bindinput="onInput" />
+        <button class="btn-start" bindtap="startJudge">开启审判</button>
+      </block>
+
+      <block wx:else>
+        <text class="advice-text">{{currentAdvice}}</text>
+        
+        <view class="btn-group" wx:if="{{!isOver}}">
+          <button class="btn-secondary" bindtap="nextAdvice">继续冲动</button>
+          <button class="btn-primary" bindtap="win">听取劝告</button>
+        </view>
+
+        <view class="footer-msg" wx:if="{{isOver}}">
+          <button class="btn-primary" bindtap="reset">重新开始</button>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

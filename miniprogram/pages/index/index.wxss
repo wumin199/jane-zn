@@ -1,0 +1,135 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* 轻微暗化背景图 */
+}
+
+.content {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-button {
+  width: 150rpx;
+  height: 150rpx;
+  background: rgba(200, 200, 200, 0.6); /* 浅灰色半透明 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.plus {
+  font-size: 80rpx;
+  color: #ffffff;
+  font-weight: 200;
+}
+
+.slogan {
+  padding: 0 60rpx;
+  text-align: center;
+  color: #ffffff;
+}
+
+.main-text {
+  display: block;
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.sub-text {
+  font-size: 26rpx;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* 两个按钮的布局 */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+}
+
+.menu-button {
+  width: 400rpx;
+  height: 450rpx;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15rpx;
+  overflow: hidden;
+}
+
+.menu-button.tight-gap {
+  position: relative;
+}
+
+.button-icon {
+  font-size: 100rpx;
+}
+
+.button-icon-img {
+  width: 280rpx;
+  height: 280rpx;
+  mix-blend-mode: multiply;
+}
+
+.button-icon-img.large {
+  width: 540rpx;
+  height: 540rpx;
+  margin-top: -40rpx;
+}
+
+.button-text {
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+}
+
+.button-text.text-overlay {
+  position: absolute;
+  bottom: 35rpx;
+  z-index: 10;
+}
+
+/* 背景提示 */
+.bg-tip {
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 20rpx 40rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}

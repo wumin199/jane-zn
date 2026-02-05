@@ -1,0 +1,18 @@
+<view class="container" style="background-image: url('../../images/bg.png');">
+  <view class="overlay"></view>
+  
+  <view class="content">
+    <view class="logo">
+      <text class="app-name">习惯对抗</text>
+      <text class="app-desc">开启对抗人性弱点之旅</text>
+    </view>
+    
+    <button class="login-btn" bindtap="onGetUserProfile">
+      <text>微信授权登录</text>
+    </button>
+    
+    <view class="tips">
+      <text>登录即代表同意用户协议和隐私政策</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,161 @@
+/* 容器样式 - 背景图平铺 */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 40rpx;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.back-btn {
+  display: none; /* 使用默认导航栏自带的返回按钮 */
+}
+
+.card {
+  z-index: 10;
+  width: 80%;
+  max-width: 600rpx;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+  padding: 40rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.label {
+  color: #eee;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* 输入框包装器 */
+.input-wrapper {
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+/* 习惯搜索建议列表 */
+.habit-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+  max-height: 300rpx;
+  overflow-y: auto;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.suggestion-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-title {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.suggestion-count {
+  color: #999;
+  font-size: 24rpx;
+}
+
+/* 标签行 - 包含展开/收起按钮 */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.toggle-btn {
+  color: #aaf;
+  font-size: 24rpx;
+  text-decoration: underline;
+}
+
+/* 劝告列表 */
+.advice-list {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  max-height: 300rpx;
+  overflow-y: auto;
+}
+
+.advice-item {
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 1.6;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.advice-item:last-child {
+  border-bottom: none;
+}
+
+.input-habit, .input-advice {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.input-habit {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.input-group {
+  display: flex;
+  gap: 20rpx;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.input-advice {
+  flex: 1;
+}
+
+.btn-add {
+  background: transparent;
+  color: #ccc;
+  border: 1rpx solid #ccc;
+  font-size: 24rpx;
+  padding: 10rpx 30rpx;
+}
+
+.btn-save {
+  margin-top: 50rpx;
+  background: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}

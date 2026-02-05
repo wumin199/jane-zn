@@ -1,0 +1,33 @@
+<view class="container" style="background-image: url('{{customBg ? customBg : '../../images/bg.png'}}');">
+  <view class="overlay"></view>
+  
+  <!-- 右上角返回按钮 -->
+  <view class="back-btn" bindtap="goBack">×</view>
+  
+  <view class="card">
+    <text class="label">我想抵制的习惯</text>
+    <input class="input-habit" 
+           placeholder="例如：吃瓜子" 
+           placeholder-style="color: rgba(255,255,255,0.5);"
+           bindinput="onHabitInput" />
+    
+    <text class="label">清醒时的劝告</text>
+    
+    <view class="input-group">
+      <input class="input-advice" 
+             placeholder="写下一条扎心的劝告..." 
+             placeholder-style="color: rgba(255,255,255,0.5);"
+             bindinput="onAdviceInput" />
+      <button class="btn-add" bindtap="addAdviceToList">添加</button>
+    </view>
+    
+    <!-- 已添加的劝告列表 -->
+    <view class="advice-list" wx:if="{{advices.length > 0}}">
+      <view class="advice-item" wx:for="{{advices}}" wx:key="index">
+        <text>{{index + 1}}. {{item}}</text>
+      </view>
+    </view>
+
+    <button class="btn-save" bindtap="saveToCloud">封存这些理智</button>
+  </view>
+</view>
