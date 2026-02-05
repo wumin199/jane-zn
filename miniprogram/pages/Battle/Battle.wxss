@@ -6,7 +6,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 } 
 /*主界面*/
 .overlay {
@@ -53,20 +54,6 @@
   backdrop-filter: blur(15px);
   border: 1rpx solid rgba(255, 255, 255, 0.3);
   /* 上下渐变：模拟圆柱体的上下边缘消失 */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 30%,
-    rgba(255, 255, 255, 0.1) 70%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 30%,
-    rgba(255, 255, 255, 0.1) 70%,
-    transparent 100%
-  );
 }
 
 /* 滚轮内容包裹层 - 椭圆径向渐变模拟圆柱体弧面 */
